@@ -1,0 +1,36 @@
+<%args>
+$schema
+$table
+$name
+</%args>
+
+<%init>
+my ($s, $t);
+eval
+{
+    $s = Alzabo::Create::Schema->load_from_file( name => $schema );
+
+    $t = $s->table($table);
+    $t->set_name($name);
+    $s->save_to_file;
+};
+
+my $e = $@;
+
+if ( $e && UNIVERSAL::isa( $e, 'Alzabo::Exception::RDBMSRules' ) )
+{
+    $m->comp( 'redirect',
+	      url => $m->comp( 'make_url',
+			       path => 'view_column' . AlzaboGUI::Mason::Config::mason_extension(),
+			       query => { errors => $e->error, %ARGS } ) );
+}
+
+$m->comp( 'exception', $e ) if $e;
+
+$m->comp( 'redirect', url => 'view_table' . AlzaboGUI::Mason::Config::mason_extension() . '?schema=' . $s->name . '&table=' . $t->name );
+
+</%init>
+
+<%flags>
+inherit => 'syshandler'
+</%flags>

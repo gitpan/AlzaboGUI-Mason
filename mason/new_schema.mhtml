@@ -1,0 +1,22 @@
+<%args>
+$name
+$rdbms
+</%args>
+
+<%init>
+
+my $s;
+eval
+{
+    $s = Alzabo::Create::Schema->new( name => $name,
+				      rdbms => $rdbms );
+    $s->save_to_file;
+};
+
+my $e = $@;
+
+$m->comp( 'exception', $e ) if $e;
+
+$m->comp( 'redirect', url => 'view_schema' . AlzaboGUI::Mason::Config::mason_extension() . '?schema=' . $s->name );
+
+</%init>

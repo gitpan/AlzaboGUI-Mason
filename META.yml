@@ -1,0 +1,13 @@
+--- #YAML:1.0
+name: AlzaboGUI-Mason
+version: 0.01
+license: perl
+distribution_type: module
+requires:
+  HTML::Mason: 0.896
+  HTTP::BrowserDetect: 0
+recommends: {}
+build_requires: {}
+conflicts: {}
+provides: {}
+generated_by: Module::Build version 0.20_02

@@ -1,0 +1,11 @@
+.*CVS.*
+lib/AlzaboGUI/Mason/Config.pm
+^Makefile$
+\.\#.*
+~$
+.*\.tar\.gz
+^Build$
+^_build/
+.bak$
+.*blib.*
+test-httpd.conf
