@@ -1,3 +1,10 @@
+0.04    2003-09-24
+
+- Cleaned up look of a couple pages (post SQL-execute pages).
+
+- Added an AlzaboGUI/Mason.pm file so CPAN indexes this distro.
+
+
 0.03    2003-09-20
 
 - Add back foreign key & index functionality.
@@ -11,3 +18,7 @@
 0.01    2003-09-20
 
 - Initial release of new Mason interface.
+
+- Among other improvements, the GraphViz-generated schema graph is now
+  much nicer.  These improvements were based in part on the code in
+  SQL Fairy.

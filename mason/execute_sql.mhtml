@@ -1,3 +1,7 @@
+  <td>
+
+<div class="page">
+
 <p>
 The SQL was successfully executed.
 </p>
@@ -5,6 +9,10 @@ The SQL was successfully executed.
 <p>
 <a href="view_schema<% AlzaboGUI::Mason::Config::mason_extension() %>?schema=<% $s->name | u %>">Back</a>
 </p>
+
+</div>
+
+  </td>
 <%args>
 $s
 $user => undef
@@ -28,3 +36,7 @@ my $e = $@;
 
 $m->comp( 'exception', $e ) if $e;
 </%init>
+
+<%attr>
+show_tables => 0
+</%attr>

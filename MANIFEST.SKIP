@@ -9,3 +9,4 @@ lib/AlzaboGUI/Mason/Config.pm
 .bak$
 .*blib.*
 test-httpd.conf
+^static-html

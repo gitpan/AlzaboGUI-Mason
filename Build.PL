@@ -13,8 +13,7 @@ use File::Spec;
 config() unless grep { $_ eq '--dist' } @ARGV;
 
 my $build =
-    AlzaboGUI::Mason::Build->new( dist_name => 'AlzaboGUI-Mason',
-				  dist_version => 0.03,
+    AlzaboGUI::Mason::Build->new( module_name => 'AlzaboGUI::Mason',
 				  license   => 'perl',
 				  requires  => { 'HTML::Mason' => 0.896,
 						 'HTTP::BrowserDetect' => 0,
