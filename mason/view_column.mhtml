@@ -1,6 +1,18 @@
   <td>
 
 <div class="right">
+<h2>Delete</h2>
+
+<form action="delete_column<% AlzaboGUI::Mason::Config::mason_extension() %>">
+ <input type="hidden" name="schema" value="<% $s->name %>">
+ <input type="hidden" name="table" value="<% $t->name %>">
+ <input type="hidden" name="column" value="<% $c->name %>">
+ <input type="submit" value="Delete column">
+</form>
+</div>
+
+
+<div class="right">
 <h2>Name</h2>
 
 <form action="change_column_name<% AlzaboGUI::Mason::Config::mason_extension() %>">
@@ -86,6 +98,8 @@
   </tr>
  </table>
 
+ <input type="submit" value="Submit">
+
 </form>
 </div>
 
@@ -111,17 +125,6 @@
 </form>
 </div>
 % }
-
-<div class="right">
-<h2>Delete</h2>
-
-<form action="delete_column<% AlzaboGUI::Mason::Config::mason_extension() %>">
- <input type="hidden" name="schema" value="<% $s->name %>">
- <input type="hidden" name="table" value="<% $t->name %>">
- <input type="hidden" name="column" value="<% $c->name %>">
- <input type="submit" value="Delete column">
-</form>
-</div>
 
   </td>
 

@@ -1,6 +1,16 @@
   <td>
 
 <div class="right">
+<h2>Delete</h2>
+
+<form action="delete_table<% AlzaboGUI::Mason::Config::mason_extension() %>">
+ <input type="hidden" name="schema" value="<% $s->name %>">
+ <input type="hidden" name="table" value="<% $t->name %>">
+ <input type="submit" value="Delete table">
+</form>
+</div>
+
+<div class="right">
 <h2>Name</h2>
 
 <form action="change_table_name<% AlzaboGUI::Mason::Config::mason_extension() %>">
@@ -122,16 +132,6 @@
 </div>
 % }
 
-<div class="right">
-<h2>Delete</h2>
-
-<form action="delete_table<% AlzaboGUI::Mason::Config::mason_extension() %>">
- <input type="hidden" name="schema" value="<% $s->name %>">
- <input type="hidden" name="table" value="<% $t->name %>">
- <input type="submit" value="Delete table">
-</form>
-</div>
-
   </td>
 
 <%args>
@@ -143,24 +143,3 @@ $t
 my @columns = $t->columns;
 my $last = $columns[-1];
 </%init>
-
-<%def .index>
-<% join ', ', @c %>
-% if ($i->unique) {
- - <b>unique</b>
-% }
-% if ($i->fulltext) {
- - <b>fulltext</b>
-% }
-<%init>
-my $i = shift;
-
-my @c;
-foreach my $c ( $i->columns )
-{
-    my $url = $m->scomp( 'href', text => $c->name, path => 'view_column' . AlzaboGUI::Mason::Config::mason_extension(), query => { schema => $i->table->schema->name, table => $i->table->name, column => $c->name } );
-    $url .= '(' . $i->prefix($c) . ')' if $i->prefix($c);
-    push @c, $url;
-}
-</%init>
-</%def>

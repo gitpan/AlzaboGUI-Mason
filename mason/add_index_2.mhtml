@@ -41,7 +41,7 @@ if ( $e && UNIVERSAL::isa( $e, 'Alzabo::Exception::RDBMSRules' ) )
 
 $m->comp( 'exception', $e ) if $e;
 
-$m->comp( 'redirect', url => 'view_table' . AlzaboGUI::Mason::Config::mason_extension() . '?schema=' . $s->name . '&table=' . $t->name );
+$m->comp( 'redirect', url => 'view_table_other' . AlzaboGUI::Mason::Config::mason_extension() . '?schema=' . $s->name . '&table=' . $t->name );
 </%init>
 
 <%flags>

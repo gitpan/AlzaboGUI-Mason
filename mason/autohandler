@@ -84,6 +84,16 @@
   <td>
 
 <div class="middle">
+ <p>
+ <& href,
+    text => 'Foreign keys & indexes',
+    path => 'view_table_other' . AlzaboGUI::Mason::Config::mason_extension(),
+    query => { table => $t->name,
+               schema => $s->name,
+             },
+  &>
+ </p>
+
  <h2>Columns</h2>
 %   for ( my $x = 0; $x < @c; $x++ ) {
 <h3>\

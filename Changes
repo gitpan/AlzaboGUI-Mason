@@ -1,3 +1,13 @@
-0.01
+0.03    2003-09-20
+
+- Add back foreign key & index functionality.
+
+
+0.02    2003-09-20
+
+- Include a passthrough Makefile.PL
+
+
+0.01    2003-09-20
 
 - Initial release of new Mason interface.

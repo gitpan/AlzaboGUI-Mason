@@ -1,3 +1,7 @@
+  <td colspan="2">
+
+<div class="middle">
+
 <form action="add_relationship_2<% AlzaboGUI::Mason::Config::mason_extension() %>">
 <input type="hidden" name="schema" value="<% $s->name %>">
 <input type="hidden" name="table_from" value="<% $t_from->name %>">
@@ -83,6 +87,8 @@
  </tr>
 </table> 
 </form>
+
+  </td>
 
 <%args>
 $s

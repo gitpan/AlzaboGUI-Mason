@@ -1,3 +1,7 @@
+  <td>
+
+<div class="right">
+
 <form action="add_index_2<% AlzaboGUI::Mason::Config::mason_extension() %>">
  <input type="hidden" name="schema" value="<% $s->name %>">
  <input type="hidden" name="table" value="<% $t->name %>">
@@ -24,7 +28,7 @@
 % foreach my $c ( @columns ) {
  <tr valign="top">
   <td>
-   <% $c %>
+   <span class="text"><% $c %></span>
    <input type="hidden" name="columns" value="<% $c %>">
   </td>
   <td>
@@ -45,13 +49,13 @@
 % }
  <tr>
   <td colspan="2">
-   Unique? <input type="checkbox" name="unique">
+   <span class="text">Unique?</span> <input type="checkbox" name="unique">
   </td>
  </tr>
 % if ( $s->rules->feature('fulltext_index') ) {
  <tr>
   <td colspan="2">
-   Fulltext? <input type="checkbox" name="fulltext">
+   <span class="text">Fulltext?</span> <input type="checkbox" name="fulltext">
   </td>
  </tr>
 % }
@@ -62,6 +66,10 @@
  </tr>
 </table>
 </form>
+
+</div>
+
+  </td>
 
 <%args>
 $s

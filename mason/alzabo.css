@@ -45,17 +45,6 @@ p
   margin-bottom: 10px; 
 }
 
-h1
-{
-  color: #A80806;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 10px;
-  line-height: 24px;
-  font-weight: regular;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 h2
 {
   color: #A80806;
@@ -270,4 +259,10 @@ pre
   margin-left: 10x;
   margin-right: 10x;
   padding: 10px;
+}
+
+.text
+{
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
 }

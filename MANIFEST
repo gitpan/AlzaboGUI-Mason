@@ -51,5 +51,6 @@ mason/view_schema.mhtml
 mason/view_schema_sql.mhtml
 mason/view_sync_sql.mhtml
 mason/view_table.mhtml
+mason/view_table_other.mhtml
 META.yml
 README
